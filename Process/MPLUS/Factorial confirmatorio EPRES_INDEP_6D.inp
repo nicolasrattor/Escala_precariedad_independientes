@@ -1,0 +1,41 @@
+TITLE:    Epres en independientes. Factorial confirmatorio con seis factores.
+DATA:    FILE IS EPRES_INDEP.dat;
+               FORMAT IS free;
+VARIABLE: NAMES ARE a1 a2 a3 a4 b1 b2 b3 c1 c2 c3 d1-d5 e1-e5 f1-f5;
+                   USEVARIABLES = a1 a2 a3 a4 b1 b2 b3 c1 c2 c3 d1-d5 e1 e2 e4 e5 f2-f5;
+                   CATEGORICAL =a1 a2 a3 a4 b1 b2 b3 c1 c2 c3 d1-d5 e1 e2 e4 e5;
+                   MISSING is a1 a2 a3 a4 b1-b3 c1 c2 c3 d1-d5 e1 e2 e4 e5 f2-f5 (99);
+
+ANALYSIS: ESTIMATOR = WLSMV;
+MODEL:
+              TEMP BY a1* a2 a3 a4;
+              [TEMP@0];
+              TEMP@1;
+
+              WAGE BY b1* b2 b3;
+              [WAGE@0];
+              WAGE@1;
+
+              RIGHT BY c1* c2 c3;
+              [RIGHT@0];
+              RIGHT@1;
+
+              EXCE BY d1-d5*;
+              [EXCE@0];
+              EXCE@1;
+
+              CEXO BY e1* e2 e4 e5;
+              [CEXO@0];
+              CEXO@1;
+
+              JORN BY f2-f5*;
+              [JORN@0];
+              JORN@1;
+
+
+                            
+OUTPUT: SAMPSTAT;
+        STANDARDIZED(STDYX);
+        MODINDICES(ALL);
+
+

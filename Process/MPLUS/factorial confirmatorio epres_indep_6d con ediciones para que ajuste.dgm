@@ -1,0 +1,172 @@
+VERSION 1.1.0
+INPUT
+TITLE:
+    Epres en independientes. Factorial confirmatorio con seis factores.
+DATA:
+    FILE IS EPRES_INDEP.dat;
+               FORMAT IS free;
+VARIABLE:
+ NAMES ARE a1 a2 a3 a4 b1 b2 b3 c1-c3 d1-d5 e1-e5 f1-f5;
+                   USEVARIABLES = a2 a3 a4 b1 b2 b3 d1-d5 e1 e4 e5 f2-f5;
+                   CATEGORICAL = a2 a3 a4 b1 b2 b3 d1-d5 e1 e4 e5;
+                   MISSING is a2 a3 a4 b1-b3 d1-d5 e1 e4 e5 f2-f5 (99);
+ANALYSIS:
+ ESTIMATOR = WLSMV;
+OUTPUT:
+ SAMPSTAT;
+        STANDARDIZED(STDYX);
+        MODINDICES(ALL);
+MODEL:
+              TEMP BY a2* a3 a4;
+              [TEMP@0];
+              TEMP@1;
+              WAGE BY b1* b2 b3;
+              [WAGE@0];
+              WAGE@1;
+              EXCE BY d1-d5*;
+              [EXCE@0];
+              EXCE@1;
+              CEXO BY e1* e4 e5;
+              [CEXO@0];
+              CEXO@1;
+              JORN BY f2-f5*;
+              [JORN@0];
+              JORN@1;
+INPUT_END
+2
+2
+0
+2
+WLSMV
+1
+GENERAL
+0
+18
+5
+0
+a2 a3 a4 b1 b2 b3 d1 d2 d3 d4 d5 e1 e4 e5 f2 f3 f4 f5 temp wage exce cexo jorn
+1
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 0 0 0 0 0
+0
+5
+temp
+a2 a3 a4
+wage
+b1 b2 b3
+exce
+d1 d2 d3 d4 d5
+cexo
+e1 e4 e5
+jorn
+f2 f3 f4 f5
+1 1 temp a2    0.800    0.029
+1 1 temp a3    0.676    0.035
+1 1 temp a4    0.464    0.028
+1 1 wage b1    0.611    0.019
+1 1 wage b2    0.908    0.013
+1 1 wage b3    0.924    0.013
+1 1 exce d1    0.863    0.009
+1 1 exce d2    0.923    0.007
+1 1 exce d3    0.921    0.007
+1 1 exce d4    0.902    0.007
+1 1 exce d5    0.899    0.008
+1 1 cexo e1    0.669    0.056
+1 1 cexo e4    0.570    0.051
+1 1 cexo e5    0.620    0.053
+1 1 jorn f2    1.155    0.045
+1 1 jorn f3    3.292    0.105
+1 1 jorn f4    3.384    0.136
+1 1 jorn f5    1.152    0.087
+2 1 wage temp    0.504    0.028
+2 1 exce temp    0.114    0.032
+2 1 exce wage    0.150    0.026
+2 1 cexo temp    0.438    0.049
+2 1 cexo wage   -0.066    0.043
+2 1 cexo exce    0.064    0.042
+2 1 jorn temp   -0.306    0.030
+2 1 jorn wage   -0.186    0.026
+2 1 jorn exce    0.304    0.025
+2 1 jorn cexo   -0.260    0.047
+4 1 f2    4.618    0.125
+4 1 f3    5.755    0.449
+4 1 f4    6.670    0.416
+4 1 f5    1.673    0.100
+5 1 temp    1.000    0.000
+5 1 wage    1.000    0.000
+5 1 exce    1.000    0.000
+5 1 cexo    1.000    0.000
+5 1 jorn    1.000    0.000
+11 1 temp a2    0.800    0.029
+11 1 temp a3    0.676    0.035
+11 1 temp a4    0.464    0.028
+11 1 wage b1    0.611    0.019
+11 1 wage b2    0.908    0.013
+11 1 wage b3    0.924    0.013
+11 1 exce d1    0.863    0.009
+11 1 exce d2    0.923    0.007
+11 1 exce d3    0.921    0.007
+11 1 exce d4    0.902    0.007
+11 1 exce d5    0.899    0.008
+11 1 cexo e1    0.669    0.056
+11 1 cexo e4    0.570    0.051
+11 1 cexo e5    0.620    0.053
+11 1 jorn f2    0.473    0.015
+11 1 jorn f3    0.808    0.018
+11 1 jorn f4    0.795    0.018
+11 1 jorn f5    0.665    0.026
+12 1 wage temp    0.504    0.028
+12 1 exce temp    0.114    0.032
+12 1 exce wage    0.150    0.026
+12 1 cexo temp    0.438    0.049
+12 1 cexo wage   -0.066    0.043
+12 1 cexo exce    0.064    0.042
+12 1 jorn temp   -0.306    0.030
+12 1 jorn wage   -0.186    0.026
+12 1 jorn exce    0.304    0.025
+12 1 jorn cexo   -0.260    0.047
+14 1 f2    0.776    0.015
+14 1 f3    0.347    0.028
+14 1 f4    0.368    0.029
+14 1 f5    0.558    0.034
+15 1 temp    1.000    0.000
+15 1 wage    1.000    0.000
+15 1 exce    1.000    0.000
+15 1 cexo    1.000    0.000
+15 1 jorn    1.000    0.000
+31 1 temp a2    0.800    0.029
+31 1 temp a3    0.676    0.035
+31 1 temp a4    0.464    0.028
+31 1 wage b1    0.611    0.019
+31 1 wage b2    0.908    0.013
+31 1 wage b3    0.924    0.013
+31 1 exce d1    0.863    0.009
+31 1 exce d2    0.923    0.007
+31 1 exce d3    0.921    0.007
+31 1 exce d4    0.902    0.007
+31 1 exce d5    0.899    0.008
+31 1 cexo e1    0.669    0.056
+31 1 cexo e4    0.570    0.051
+31 1 cexo e5    0.620    0.053
+31 1 jorn f2    1.155    0.045
+31 1 jorn f3    3.292    0.105
+31 1 jorn f4    3.384    0.136
+31 1 jorn f5    1.152    0.087
+32 1 wage temp    0.504    0.028
+32 1 exce temp    0.114    0.032
+32 1 exce wage    0.150    0.026
+32 1 cexo temp    0.438    0.049
+32 1 cexo wage   -0.066    0.043
+32 1 cexo exce    0.064    0.042
+32 1 jorn temp   -0.306    0.030
+32 1 jorn wage   -0.186    0.026
+32 1 jorn exce    0.304    0.025
+32 1 jorn cexo   -0.260    0.047
+34 1 f2    4.618    0.125
+34 1 f3    5.755    0.449
+34 1 f4    6.670    0.416
+34 1 f5    1.673    0.100
+35 1 temp    1.000    0.000
+35 1 wage    1.000    0.000
+35 1 exce    1.000    0.000
+35 1 cexo    1.000    0.000
+35 1 jorn    1.000    0.000
