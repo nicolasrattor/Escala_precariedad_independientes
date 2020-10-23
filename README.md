@@ -6,5 +6,6 @@ Texto elaborado en el marco del Trabajo N°3 del [Diplomado de Postítulo Análi
 
 Aunque este es un trabajo original, ha sido realizado en base a muchas de las reflexiones y análisis desarrollados en el marco de los objetivos 1 y 2 del proyecto FONDECYT 1171105 (2017-2019) *"Contextual determinants of employment conditions and health in Chile. A multilevel study combining regional and individual level data on labor market performance, employment precariousness, and workers' health and wellbeing"* liderado por la profesora Alejandra Vives del Departamento de Salud Pública de la Universidad Católica.
 
-Ver [versión en desarrollo](https://nicolasrattor.github.io/Escala_precariedad_informales/). 
+Este es el branch creado para incorporar modificaciones a la versión original a ser incluidos en capítulo de precariedad laboral en AL.
 
+Ver [versión en desarrollo](https://nicolasrattor.github.io/Escala_precariedad_informales/). 
