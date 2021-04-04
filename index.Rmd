@@ -1,23 +1,27 @@
 ---
-title: "Borrador. Hacia una Escala de la Precariedad Laboral en Trabajadores Independientes"
-author: "Fernando Baeza y Nicolás Ratto"
-date: "15 de febrero de 2021"
+title: "Hacia una Escala de la Precariedad Laboral en Trabajadores Independientes"
+description: |
+ Texto elaborado en el marco del [Diplomado de Postítulo Análisis Multivariable](http://www.facso.uchile.cl/postgrado/123608/diplomado-de-postitulo-analisis-multivariable) de la Universidad de Chile. Actualmente está en desarrollo y mejora para publicarse como capítulo de libro.  |
+ [Repositorio Github](https://github.com/nicolasrattor/Escala_precariedad_informales). 
+author:
+  - name: Fernando Baeza
+    url: https://www.researchgate.net/profile/Fernando-Baeza-2
+    affiliation: Universidad Católica de Chile
+    affiliation_url: http://www.doctorado.geografia.uc.cl/
+    orcid_id:
+  - name: Nicolás Ratto
+    url: https://nicolasrattor.netlify.app/
+    affiliation: Universidad de Chile
+    affiliation_url: http://www.facso.uchile.cl/
+    orcid_id: 0000-0003-1462-0238
+date: "Febrero de 2021"
+journal: "Borrador"
+#citation_url: https://www.cairn.info/revue-internationale-des-etudes-du-developpement.htm
 output: 
-#  bookdown::word_document2:
-#    reference_docx: Input/Template/Template.docx
-  html_document:
-    toc: true
-    toc_float: true
-    toc_collapsed: true
-    toc_depth: 4
-    number_sections: true
-    theme: lumen
-    df_print: paged
-    
-#always_allow_html: yes
-
-    
-#bibliography: Input/Bib/Bib.bib  
+ distill::distill_article:
+   toc: true
+   toc_depth: 1
+   toc_float: TRUE
 ---
 
 ```{r setup, include=FALSE}
@@ -25,8 +29,6 @@ output:
 
 knitr::opts_chunk$set(echo = TRUE)
 ```
-
-Texto elaborado en el marco del Trabajo N°3 del [Diplomado de Postítulo Análisis Multivariable](http://www.facso.uchile.cl/postgrado/123608/diplomado-de-postitulo-analisis-multivariable) de la Universidad de Chile. Actualmente está en desarrollo y mejora para publicarse como capítulo de libro. [Repositorio github aquí](https://github.com/nicolasrattor/Escala_precariedad_informales). 
 
 Aunque este es un trabajo original, ha sido realizado en base a muchas de las reflexiones y análisis desarrollados en el marco de los objetivos 1 y 2 del proyecto FONDECYT 1171105 (2017-2019) *"Contextual determinants of employment conditions and health in Chile. A multilevel study combining regional and individual level data on labor market performance, employment precariousness, and workers' health and wellbeing"* liderado por la profesora [Alejandra Vives](https://medicina.uc.cl/persona/dra-alejandra-vives-vergara/) del Departamento de Salud Pública de la Universidad Católica.
  
@@ -718,6 +720,7 @@ write_xlsx(b, "Output/BBDD/tablas descriptivas.xlsx", col_names = TRUE,format_he
 
 
 **Tabla 1.** Variables utilizadas el análisis factorial confirmatorio
+
 ```{r echo=FALSE,message=FALSE,warning=FALSE}
 library(readxl)
 c<-read_excel("Input/BBDD/Dimensiones escala precariedad -revFBR.xlsx",range = "A1:H26")
