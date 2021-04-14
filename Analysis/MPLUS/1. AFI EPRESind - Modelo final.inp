@@ -1,0 +1,47 @@
+TITLE:   Epres en independientes. Factorial confirmatorio con 19 items.
+DATA:    FILE IS EPRES_INDEP.dat;
+               FORMAT IS free;
+VARIABLE: NAMES ARE T1-T4 I1-I3 D1-D3 E1-E5 CEX1-CEX4 CEN1-CEN3 FEXP_MAY15;
+                   USEVARIABLES = T1 T3-T4 I1-I3 D1-D2 E1-E5 CEX1 CEX3 CEX4 CEN1-CEN3 
+                   FEXP_MAY15;
+                   CATEGORICAL =T1 T3-T4 I1-I3 D1-D2 E1-E5 CEX1 CEX3 CEX4 CEN1-CEN3;
+                   MISSING is T1 T3-T4 I1-I3 D1-D2 E1-E5 CEX1 CEX3 CEX4 CEN1-CEN3 
+                   FEXP_MAY15 (99);
+                   WEIGHT IS FEXP_MAY15
+
+ANALYSIS: ESTIMATOR = WLSMV;
+
+MODEL:
+              TEMP BY T1* T3 T4;
+              [TEMP@0];
+              TEMP@1;
+
+              INGR BY I1-I3*;
+              [INGR@0];
+              INGR@1;
+
+              DERE BY D1-D2*;
+              [DERE@0];
+              DERE@1;
+
+              EJER BY E1-E5*;
+              [EJER@0];
+              EJER@1;
+
+              CEXO BY CEX1* CEX3 CEX4;
+              [CEXO@0];
+              CEXO@1;
+
+              CEND BY CEN1-CEN3*;
+              [CEND@0];
+              CEND@1;
+
+
+                            
+OUTPUT: SAMPSTAT;
+        CINTERVAL;
+        STANDARDIZED(STDYX);
+        MODINDICES(ALL);
+        TECH4
+
+
