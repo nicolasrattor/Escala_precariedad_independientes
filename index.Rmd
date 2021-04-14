@@ -689,22 +689,22 @@ view(freq(fEPRES_INDEP, weights = enets$FEXP_MAY15, cumul=F, headings = T, repor
  #         display.type = F, totals = F))
 
 # Gráfico 1---- Utilizados en la versión continua de las variables CEN #
-a<-enets %>% ggplot(aes(a41, weight=FEXP_MAY15))+geom_bar(aes(y = (..count..)/sum(..count..)))+labs(x="N° de horas que trabaja de Lunes a Viernes", y= "Porcentaje")+ theme_classic() + scale_y_continuous(labels = scales::percent_format(accuracy = 1))
-b<-enets %>% ggplot(aes(a41, weight=FEXP_MAY15))+geom_bar(aes(y = (..count..)/sum(..count..)))+labs(x="N° de horas que trabaja en Sábado", y= "Porcentaje")+ theme_classic() + scale_y_continuous(labels = scales::percent_format(accuracy = 1))
-c<-enets %>% ggplot(aes(a42, weight=FEXP_MAY15))+geom_bar(aes(y = (..count..)/sum(..count..)))+labs(x="N° de horas que trabaja en Domingo", y= "Porcentaje")+ theme_classic() + scale_y_continuous(labels = scales::percent_format(accuracy = 1))
-
-library(gridExtra)
-A<-grid.arrange(a,b,c)
-ggsave(
- plot = A,
- filename = "Output/Graphs/grafico4A.png",
- device = "png",
- dpi = "retina",
- units = "cm",
- width = 33,
- height = 15
-)
-
+#a<-enets %>% ggplot(aes(a41, weight=FEXP_MAY15))+geom_bar(aes(y = (..count..)/sum(..count..)))+labs(x="N° de horas que trabaja de Lunes a Viernes", y= #"Porcentaje")+ theme_classic() + scale_y_continuous(labels = scales::percent_format(accuracy = 1))
+#b<-enets %>% ggplot(aes(a41, weight=FEXP_MAY15))+geom_bar(aes(y = (..count..)/sum(..count..)))+labs(x="N° de horas que trabaja en Sábado", y= #"Porcentaje")+ theme_classic() + scale_y_continuous(labels = scales::percent_format(accuracy = 1))
+#c<-enets %>% ggplot(aes(a42, weight=FEXP_MAY15))+geom_bar(aes(y = (..count..)/sum(..count..)))+labs(x="N° de horas que trabaja en Domingo", y= #"Porcentaje")+ theme_classic() + scale_y_continuous(labels = scales::percent_format(accuracy = 1))
+#
+#library(gridExtra)
+#A<-grid.arrange(a,b,c)
+#ggsave(
+# plot = A,
+# filename = "Output/Graphs/grafico4A.png",
+# device = "png",
+# dpi = "retina",
+# units = "cm",
+# width = 33,
+# height = 15
+#)
+#
 
 #### Exportando datos a dat ####
 
